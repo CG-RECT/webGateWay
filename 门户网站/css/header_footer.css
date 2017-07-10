@@ -105,17 +105,36 @@
 .img_contain a:hover{
 	color: orange;
 }
+.img_contain .moveBtn{
+	cursor: pointer;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
 .img_contain .leftM{
 	left: 10px;
-	cursor: w-resize;
 }
 .img_contain .rightM{
 	right: 10px;
-	cursor: e-resize;
 }
-
+.imgs_ul{
+	bottom: 5%;
+	left: 50%;
+	position: absolute;
+	height: 20px;
+}
 .imgs_ul li{
-	background-color: orange;
+	width: 10px;
+	height: 10px;
+	margin-left: 20px;
+	display: inline-block;
+	background-color: white;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.imgs_ul li:nth-child(1){
+	margin-left: 0;
 }
 
 
