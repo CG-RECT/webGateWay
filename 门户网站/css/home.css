@@ -1,0 +1,255 @@
+.clearfloat{
+	clear: both;
+}
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+.animation{
+	transition: all .5s;
+	-moz-transition: all .5s; /* Firefox 4 */
+	-webkit-transition: all .5s; /* Safari 和 Chrome */
+	-o-transition: all .5s; /* Opera */
+}
+body{
+	font-family: PingFangSC-Regular;
+}
+.content{
+	min-width: 1300px;
+}
+.home-body{
+	width: 1150px;
+	height: 970px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+.home-left,
+.home-right{
+	height: 850px;
+}
+/*Left*/
+.home-left{
+	width: 690px;
+	padding-right: 30px;
+}
+.news{
+	padding-bottom: 30px;
+}
+/*Catrgory*/
+.category{
+	background: rgba(227,227,227,0.50);
+	/*背景颜色渐变*/
+    background: linear-gradient(-180deg, #FFFFFF 20%, #E4E4E4 100%);
+	box-shadow: 0 2px 3px 0 rgba(161,161,161,0.50);
+	color: #FFFFFF; 
+	height: 40px;
+}
+.category a:hover{
+	text-shadow: 0 0 1px #1266BA;
+}
+.category a{
+	padding: 10px 50px 0 0;
+	display: block;
+	font-size: 14px;
+	color: #1266BA;
+}
+.name,
+.corner{
+	display: block;
+}
+.name{
+	background: rgba(9,89,179,0.8);
+	/*background: linear-gradient(-180deg, #4CBBE9 0%, #0959B3 100%);*/
+	border-top-left-radius:5px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 20px;
+}
+.corner{
+	width: 0;
+	height: 0;
+	border-bottom: 40px solid rgba(9,89,179,0.8);
+	border-right: 10px solid transparent;
+}
+.name-cn{
+	font-size: 24px;
+}
+.name-en{
+	font-size: 14px;
+}
+/*Catrgory End*/
+
+/*News Detial*/
+.news-article-detial{
+	padding: 0 10px 10px;
+	margin: 25px 0;
+	box-shadow: 0 2px 2px 0 rgba(214,215,220,0.50);
+}
+.article-img{
+	display: block;
+	width: 180px;
+	height: 140px;
+}
+.article-content{
+	width: 440px;
+	padding: 0 30px 0 20px; 
+}
+.title{
+	font-size: 18px;
+	color: #333333;
+}
+.time{
+	padding: 5px 0 15px;
+	font-size: 14px;
+	color: #999999;
+}
+.brief{
+	font-size: 14px;
+	color: #666666;
+}
+.water-show{
+	padding: 26px 0;
+	display: block;
+	width: 100%;
+	height: 158px;
+}
+.konwledge-list{
+	width: 100%;
+	height: 140px;
+	color: #3592E9;
+	padding-left: 30px;s
+}
+.konwledge-list-item{
+	list-style: disc;
+}
+.konwledge-list-item a{
+	display: inline-block;
+	padding: 5px 0;
+	font-size: 18px;
+	color: #333333;
+}
+/*News Detial End*/
+
+/*Left End*/
+
+/*Right*/
+.home-right{
+	width: 400px;
+	padding-left: 29px;
+	border-left: 1px solid  #D6D7DC;
+}
+/*Bussiness*/
+.business{
+	padding:27px 0 24px;
+}
+.business-item{
+	padding: 13px 10px;
+	text-align: center;
+}
+.business-item p{
+	padding-top: 10px;
+	font-size: 14px;
+	color: #333333;
+}
+.img-back{
+	width: 80px;
+	height: 80px;
+	background: linear-gradient(-180deg, #FFFFFF 20%, #E4E4E4 100%);
+	box-shadow: 0 2px 3px 0 rgba(161,161,161,0.50);
+	border-radius: 5px;
+}
+.img-back img:hover{
+	transform: scale(1.02,1.02);
+	-ms-transform: scale(1.02,1.02);	/* IE 9 */
+	-webkit-transform: scale(1.02,1.02);	/* Safari 和 Chrome */
+	-o-transform: scale(1.02,1.02);	/* Opera */
+	-moz-transform: scale(1.02,1.02);	/* Firefox */
+}
+.img-back img{
+	width: 50px;
+	height: 50px;
+}
+/*Bussiness End*/
+
+/*UserCenter*/
+.user-center{
+	padding-bottom: 30px;
+}
+/* WebKit browsers */
+::-webkit-input-placeholder { 
+	font-size: 16px;
+    color:#DCDCDC;
+}
+/* Mozilla Firefox 4 to 18 */
+:-moz-placeholder {
+	font-size: 16px; 
+    color:#DCDCDC;
+}
+ /* Mozilla Firefox 19+ */
+::-moz-placeholder {
+	font-size: 16px;
+    color:#DCDCDC;
+}
+/* Internet Explorer 10+ */
+:-ms-input-placeholder { 
+	font-size: 16px;
+    color:#DCDCDC;
+}
+.username,
+.password{
+	width: 330px;
+	height: 20px;
+	font-size: 16px;
+	padding: 10px 0 10px 45px;
+	margin:20px 10px;
+	display: block;
+	border: 1px solid #D8D8D8;
+}
+.username{
+	margin-top: 36px;
+	background: url("../image/username.png") no-repeat;
+}
+.password{
+	background: url("../image/password.png") no-repeat;
+}
+.login-btn{
+	width: 180px;
+	height: 40px;
+	background: rgba(9,89,179,0.8);
+	border:none;
+	color: #EDEDED;
+	cursor: pointer;
+}
+.login-btn:hover{
+	background: rgba(9,89,179,1);
+}
+.no-account{
+	margin-top: 20px;
+	margin-right: 10px;
+	font-size: 14px;
+	color: #999999;
+}
+.no-account a{
+	color: #C99701;
+	text-decoration: underline;
+}
+/*UserCenter End*/
+/*Right End*/
+
+/*Bottom*/
+.home-bottom{
+	width: 100%;
+	height: 120px;
+	padding: 46px 0;
+}
+.bottom-img{
+	display: block;
+	width: 374px;
+	height: 120px;
+}
+.bottom-img-middle{
+	padding:0 14px; 
+}
+/*Bottom End*/
