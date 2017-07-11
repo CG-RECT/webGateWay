@@ -41,62 +41,70 @@ function getCurrentImg() {
 }
 //get the currentElement's before and behind
 //go before
-function getBeforeImg() {
+function getBeforeImg(index) {
     var $before = $currentImg==0?getImgNum()-1:$currentImg-1;
+    if (index!=null) {
+        $before = index;
+    }
     var $img = $('.img_contain').children('img').eq($before);
     return $img;
 }
-function goToBeforeImg(parm,fast) {
+function goToBeforeImg(parm=1,fast,beforeInd,backInd) {
     if (lockH) {return};
     lockH = true;
     var $imgWidth = $(".img_contain").width();
     $cImg = getCurrentImg();
-    $beforeImg = getBeforeImg();
-    $behindImg = getBeindImg();
+    $beforeImg = getBeforeImg(beforeInd);
+    $behindImg = getBeindImg(backInd);
     $cImg.css('z-index',0);
-    changeCI(-1);
+    // alert("前: "+parm);
+    changeCI(-parm);
     var $speed = 500;
     if (fast) {$speed = 500};
     // $cImg.animate({left:"+="+$imgWidth+"px"},$speed);
     $cImg.add($behindImg).add($beforeImg).animate({left:"+="+$imgWidth+"px"},{duration:$speed, easing:"linear", complete:function(){
         loadPicRound();
-        if (parm&&--parm>0) {
-            goToBeforeImg(--parm,true);
-        };
+        // if (parm&&--parm>0) {
+        //     goToBeforeImg(--parm,true);
+        // };
     }});
 }
 
 //go behind
-function getBeindImg() {
+function getBeindImg(index) {
     var $behind = $currentImg==(getImgNum()-1)?0:$currentImg+1;
+    if (index!=null) {
+        $behind = index;
+    }
     var $img = $('.img_contain').children('img').eq($behind);
     return $img;
 }
-function goToBackImg(parm,fast) {
+function goToBackImg(parm=1,fast,beforeInd,backInd) {
     if (lockH) {return};
     lockH = true;
     var $imgWidth = $(".img_contain").width();
     $cImg = getCurrentImg();
-    $beforeImg = getBeforeImg();
-    $behindImg = getBeindImg();
+    $beforeImg = getBeforeImg(beforeInd);
+    $behindImg = getBeindImg(backInd);
     $cImg.css('z-index',0);
-    changeCI(1);
+    // alert("后: "+parm);
+    changeCI(parm);
     var $speed = 500;
     if (fast) {$speed = 500};
     // $cImg.animate({left:"-="+$imgWidth+"px"},$speed);
     $cImg.add($behindImg).animate({left:"-="+$imgWidth+"px"},{duration:$speed, easing:"linear", complete:function(){
         loadPicRound();
-        if (parm&&--parm>0) {
-            goToBackImg(--parm,true);
-        };
+        // if (parm&&--parm>0) {
+        //     goToBackImg(--parm,true);
+        // };
     }});
 }
 
 //load left right pic
-function loadPicRound(){
+function loadPicRound(beforeInd,backInd){
     var $imgWidth = $(".img_contain").width();
-    $beforeImg = getBeforeImg();
-    $behindImg = getBeindImg();
+    $beforeImg = getBeforeImg(beforeInd);
+    $behindImg = getBeindImg(backInd);
     $beforeImg.css({'display':'block','left':-$imgWidth});
     $behindImg.css({'display':'block','left':$imgWidth});
     getCurrentImg().css('z-index',99);
@@ -106,7 +114,7 @@ function loadPicRound(){
 $(function () {
     loadPicRound();
     setIndicator();
-    t = setInterval('goToBackImg()',5000);
+    // t = setInterval('goToBackImg()',5000);
 });
 
 var $currentIndicator = 0;
@@ -136,14 +144,24 @@ function clickIndicator($parm){
     // alert('currentImg  '+$currentImg+'\nindex  '+$ind+'\ndif  '+$dif+'\nnumber  '+$number);
     var $undif = $number - Math.abs($dif);
     if (Math.abs($dif) <= $undif) {
-        moveTheImg($dif);
+        moveTheImg($dif,$ind);
     }else{
-        $dif>0?moveTheImg(-$undif):moveTheImg($undif);
+        $dif>0?moveTheImg(-$undif,$ind):moveTheImg($undif,$ind);
     };
 }
-function moveTheImg(parm){
-    parm>0?goToBackImg(parm,true):goToBeforeImg(-parm,true);
+function moveTheImg(parm,index){
+    if (parm>0) {
+        //go back
+        loadPicRound(null,index);
+        goToBackImg(parm,true,null,index);
+    }else{
+        loadPicRound(index,null);
+        goToBeforeImg(-parm,true,index,null);
+        //go before
+    }
+    // parm>0?goToBackImg(parm,true):goToBeforeImg(-parm,true);
 }
+
 
 
 /**** 设置轮播图结束 ****/
