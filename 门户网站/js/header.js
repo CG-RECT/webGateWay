@@ -5,7 +5,7 @@ function setImgHeigt(){
     $scroll_img.width($(".img_contain").width());
     $scroll_img.height($(".img_contain").height());
     var lineH = $(".img_contain").height();
-    $('.moveBtn').css('line-height',lineH+"px");
+    $('.moveBtn').css({'line-height':lineH+"px",'z-index':888});
 }
 $(function(){
     setImgHeigt();
@@ -53,11 +53,12 @@ function goToBeforeImg(parm,fast) {
     $cImg = getCurrentImg();
     $beforeImg = getBeforeImg();
     $behindImg = getBeindImg();
+    $cImg.css('z-index',0);
     changeCI(-1);
     var $speed = 500;
-    if (fast) {$speed = 200};
-    $cImg.animate({left:"+="+$imgWidth+"px"},$speed);
-    $beforeImg.animate({left:"+="+$imgWidth+"px"},{duration:$speed, easing:"linear", complete:function(){
+    if (fast) {$speed = 500};
+    // $cImg.animate({left:"+="+$imgWidth+"px"},$speed);
+    $cImg.add($behindImg).add($beforeImg).animate({left:"+="+$imgWidth+"px"},{duration:$speed, easing:"linear", complete:function(){
         loadPicRound();
         if (parm&&--parm>0) {
             goToBeforeImg(--parm,true);
@@ -78,11 +79,12 @@ function goToBackImg(parm,fast) {
     $cImg = getCurrentImg();
     $beforeImg = getBeforeImg();
     $behindImg = getBeindImg();
+    $cImg.css('z-index',0);
     changeCI(1);
     var $speed = 500;
-    if (fast) {$speed = 200};
-    $cImg.animate({left:"-="+$imgWidth+"px"},$speed);
-    $behindImg.animate({left:"-="+$imgWidth+"px"},{duration:$speed, easing:"linear", complete:function(){
+    if (fast) {$speed = 500};
+    // $cImg.animate({left:"-="+$imgWidth+"px"},$speed);
+    $cImg.add($behindImg).animate({left:"-="+$imgWidth+"px"},{duration:$speed, easing:"linear", complete:function(){
         loadPicRound();
         if (parm&&--parm>0) {
             goToBackImg(--parm,true);
@@ -97,13 +99,14 @@ function loadPicRound(){
     $behindImg = getBeindImg();
     $beforeImg.css({'display':'block','left':-$imgWidth});
     $behindImg.css({'display':'block','left':$imgWidth});
+    getCurrentImg().css('z-index',99);
     lockH = false;
     selectIndicator();
 }
 $(function () {
     loadPicRound();
     setIndicator();
-    // t = setInterval('goToBackImg()',5000);
+    t = setInterval('goToBackImg()',5000);
 });
 
 var $currentIndicator = 0;
@@ -113,7 +116,7 @@ function setIndicator(){
     //10+30
     var $imgs_ul_width = $num*40-30;
     var $imgs_ul = $('.imgs_ul:first');
-    $imgs_ul.width($imgs_ul_width).css('margin-left',-$imgs_ul_width/2+'px');
+    $imgs_ul.width($imgs_ul_width).css({'margin-left':-$imgs_ul_width/2+'px','z-index':888});
     for (var i = 0; i < $num; i++) {
         $imgs_ul.append("<li onclick='clickIndicator(this)'></li>");
     };
@@ -139,11 +142,7 @@ function clickIndicator($parm){
     };
 }
 function moveTheImg(parm){
-    if (parm>0) {
-        goToBackImg(parm,true);
-    }else{ 
-        goToBeforeImg(-parm,true);
-    };
+    parm>0?goToBackImg(parm,true):goToBeforeImg(-parm,true);
 }
 
 
