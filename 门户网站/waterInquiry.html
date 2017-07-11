@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户中心-历史水费查询</title>
+    <link rel="stylesheet" type="text/css" href="./css/userCenter.css">
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+</head>
+<body>
+	<div class="main_content">
+		<div class="content_top">
+			<p class="float_left">用户中心/</p>
+			<span>User Center</span>
+			<p class="float_right location"><img src="./image/location.png" alt="">当前位置:&nbsp;&nbsp;首页><span>用户中心</span></p>
+		</div>
+		<div class="content_middle">
+			<div class="content_left">
+				<ul class="nav_list">
+					<span>用户中心</span>
+					<li class="selected"><a href="">历史水费查询</a></li>
+					<li><a href="">咨询投诉</a></li>
+				</ul>
+			</div>
+			<div class="content_right">
+				<div class="content_page">
+					<div class="page_top">
+						<img src="./image/user_pic.png" alt="user_pic">
+						<div class="user_des">
+							<span>用户名: 时光无声</span>
+							<span>联系电话: 15465124865</span>
+							<span>邮箱地址: 15465124865@163.com</span>
+						</div>
+						<p>修改资料在咨询投诉里面交给管理员</p>
+					</div>
+					<div class="page_middle">
+						<div class="search_input">
+							<div class="date_input">
+								<span>近期消费时间段:</span>
+								<input type="text">
+								<span>-</span>
+								<input type="text">
+							</div>
+							<div class="userName_input">
+								<span>用户名:</span>
+								<input type="text">
+							</div>
+							<div class="num_input">
+								<span>编号:</span>
+								<input type="text">
+							</div>
+							<input type="submit" id="search_btn" value="搜索">
+							<table id="waterInquiry_table">
+								<tr>
+									<th>用户编号</th>
+									<th>用户名称</th>
+									<th>日期</th>
+									<th>水费(元)</th>
+									<th>排污费</th>
+									<th>水费总额</th>
+									<th>逾期未缴水费</th>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

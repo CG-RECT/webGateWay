@@ -15,8 +15,6 @@ $(window).resize(function(){
     loadPicRound();
 });
 
-
-
 /**** 设置轮播图 ****/
 //current index
 var $currentImg = 0;
@@ -48,8 +46,9 @@ function getBeforeImg(index) {
     var $img = $('.img_contain').children('img').eq($before);
     return $img;
 }
-function goToBeforeImg(parm=1,fast,beforeInd,backInd) {
-    if (lockH) {return};
+function goToBeforeImg(parm,fast,beforeInd,backInd) {
+    if(parm==null){parm=1}
+    if (lockH) {return}
     lockH = true;
     var $imgWidth = $(".img_contain").width();
     $cImg = getCurrentImg();
@@ -58,7 +57,7 @@ function goToBeforeImg(parm=1,fast,beforeInd,backInd) {
     $cImg.css('z-index',0);
     changeCI(-parm);
     var $speed = 500;
-    if (fast) {$speed = 500};
+    if (fast) {$speed = 500}
     $cImg.add($behindImg).add($beforeImg).animate({left:"+="+$imgWidth+"px"},{duration:$speed, easing:"linear", complete:function(){
         loadPicRound();
     }});
@@ -73,8 +72,9 @@ function getBeindImg(index) {
     var $img = $('.img_contain').children('img').eq($behind);
     return $img;
 }
-function goToBackImg(parm=1,fast,beforeInd,backInd) {
-    if (lockH) {return};
+function goToBackImg(parm,fast,beforeInd,backInd) {
+    if(parm==null){parm=1}
+    if (lockH) {return}
     lockH = true;
     var $imgWidth = $(".img_contain").width();
     $cImg = getCurrentImg();
@@ -83,7 +83,7 @@ function goToBackImg(parm=1,fast,beforeInd,backInd) {
     $cImg.css('z-index',0);
     changeCI(parm);
     var $speed = 500;
-    if (fast) {$speed = 500};
+    if (fast) {$speed = 500}
     $cImg.add($behindImg).animate({left:"-="+$imgWidth+"px"},{duration:$speed, easing:"linear", complete:function(){
         loadPicRound();
     }});
@@ -146,11 +146,9 @@ function moveTheImg(parm,index){
 
 /**** 设置轮播图结束 ****/
 
-
 // 1.获取图片个数
 // 2.在两边加载图片,共加载三个
 // 3.移动,移动一个成功后自动刷新这三个img
-//
 //
 // 1.移动成功切换
 // 2.点击切换,大图移动
