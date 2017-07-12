@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>用户中心-历史水费查询</title>
+    <script type="text/javascript" src="./js/vendor/jquery-1.9.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/userCenter.css">
 	<link rel="stylesheet" type="text/css" href="./css/reset.css">
 </head>
@@ -30,7 +31,7 @@
 							<span>联系电话: 15465124865</span>
 							<span>邮箱地址: 15465124865@163.com</span>
 						</div>
-						<p>修改资料在咨询投诉里面交给管理员</p>
+						<p>修改资料在咨询投诉里面交给管理员.</p>
 					</div>
 					<div class="page_middle">
 						<div class="search_input">
@@ -42,29 +43,50 @@
 							</div>
 							<div class="userName_input">
 								<span>用户名:</span>
-								<input type="text">
+								<input class="name_length" type="text">
 							</div>
 							<div class="num_input">
 								<span>编号:</span>
 								<input type="text">
 							</div>
 							<input type="submit" id="search_btn" value="搜索">
-							<table id="waterInquiry_table">
-								<tr>
-									<th>用户编号</th>
-									<th>用户名称</th>
-									<th>日期</th>
-									<th>水费(元)</th>
-									<th>排污费</th>
-									<th>水费总额</th>
-									<th>逾期未缴水费</th>
-								</tr>
-							</table>
 						</div>
+                        <table id="waterInquiry_table">
+                            <tr>
+                                <th>用户编号</th>
+                                <th>用户名称</th>
+                                <th>日期</th>
+                                <th>水费(元)</th>
+                                <th>排污费</th>
+                                <th>水费总额</th>
+                                <th>逾期未缴水费</th>
+                            </tr>
+                        </table>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+    <script type="text/javascript">
+        //to the meterInput table
+        function forTable_waterInquiry() {
+            var table = document.getElementById("waterInquiry_table");
+            var tableInnerHTML = table.innerHTML;
+            var tbody = '';
+            var data = ['S0001','zhangsan','2017-06-25','200','28','228','20'];
+            for (var i = 0; i < 8; i++){
+                tbody+="<tr>";
+                for (var j = 0; j < 7; j++){
+                    tbody+="<td>";
+                    tbody+=data[j];
+                    tbody+="</td>";
+                }
+                tbody+="</tr>";
+            }
+            tableInnerHTML += tbody;
+            table.innerHTML = tableInnerHTML;
+        }
+        forTable_waterInquiry();
+    </script>
 </body>
 </html>
