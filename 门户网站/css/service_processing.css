@@ -133,8 +133,49 @@ textarea{
 	margin-left: 30px;
 }
 
-
-
+.address_detail{
+	width: 93%;
+	overflow: hidden;
+	padding: 37px 0 38px 41px;
+	border: 1px solid #D8D8D8;
+	margin-top: 30px;
+}
+.address_detail:hover{
+    box-shadow: 3px 6px 14px 0px #666666
+}
+.top_forty{
+	margin-top: 36px;
+}
+.address_detail .address_show{
+	float: left;
+	display: block;
+}
+.address_detail .tel_show{
+	float: left;
+	margin-left: 100px;
+	display: block;
+}
+.address_detail img{
+	width: 20px;
+	height: 20px;
+	display: block;
+	float: left;
+	margin-right: 10px;
+	margin-top: 1px;
+}
+.address_detail>.address_title{
+	overflow: hidden;
+	font-family: PingFangSC-Regular;
+	font-size: 16px;
+	color: #000000;
+	display: block;
+	margin-bottom: 20px;
+}
+.address_detail div>span{
+	font-family: PingFangSC-Regular;
+	font-size: 16px;
+	color: #666666;
+}
 
 
 
