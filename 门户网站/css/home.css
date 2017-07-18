@@ -209,10 +209,10 @@ body{
 }
 .username{
 	margin-top: 36px;
-	background: url("../image/username.png") no-repeat;
+	background: url("../image/people.png") no-repeat 8px 8px;
 }
 .password{
-	background: url("../image/password.png") no-repeat;
+	background: url("../image/lock.png") no-repeat 8px 8px;
 }
 .login-btn{
 	width: 180px;

@@ -118,12 +118,12 @@ function setIndicator(){
         $imgs_ul.append("<li onclick='clickIndicator(this)'></li>");
     };
     $currentIndicator = $currentImg;
-    $imgs_ul.children('li').eq($currentIndicator).css('background','orange');
+    $imgs_ul.children('li').eq($currentIndicator).css('background','rgba(255,255,255,0.9)');
 }
 function selectIndicator(){
-    $('.imgs_ul:first').children('li').eq($currentIndicator).css('background','white');
+    $('.imgs_ul:first').children('li').eq($currentIndicator).css('background','rgba(255,255,255,0.3)');
     $currentIndicator = $currentImg;
-    $('.imgs_ul:first').children('li').eq($currentIndicator).css('background','orange');
+    $('.imgs_ul:first').children('li').eq($currentIndicator).css('background','rgba(255,255,255,0.9)');
 
 }
 function clickIndicator($parm){

@@ -27,10 +27,28 @@
 				<div class="content_page">
 					<div class="article_lists">
 						<img src="./image/home_office.png" alt="">
-						<div class="article_block">
-							<div class="block_left float_left">
-								<span class="block_date_day">06</span>
-								<span class="block_date_month">2017-06</span>
+						<div class="article_block" onmouseover="hoverOnThis(this)" onmouseout="hoverOutThis(this)" onclick="clickOnThis()">
+							<div class="big_left clearfix">
+								<div class="block_left float_left">
+									<span class="block_date_day">06</span>
+									<span class="block_date_month">2017-06</span>
+								</div>
+							</div>
+							<div class="block_right float_left">
+								<h4>净水器过滤后水更脏？都是滤芯更换不及时惹的祸</h4>
+								<span>华龙网3月21日17时讯（记者 董进 实习生 余靖雯）“水是生命之源”。明天就是“世界水日”了，近年来人们一方面对节约水资源、保护水环境、减少水污染等方面越...</span>
+							</div>
+						</div>
+					</div>
+					<div class="article_lists">
+						<img src="./image/home_office.png" alt="">
+						<div class="article_block" onmouseover="hoverOnThis(this)" onmouseout="hoverOutThis(this)"
+							 onclick="clickOnThis(this)">
+							<div class="big_left clearfix">
+								<div class="block_left float_left">
+									<span class="block_date_day">06</span>
+									<span class="block_date_month">2017-06</span>
+								</div>
 							</div>
 							<div class="block_right float_left">
 								<h4>净水器过滤后水更脏？都是滤芯更换不及时惹的祸</h4>
@@ -42,5 +60,32 @@
 			</div>
 		</div>
 	</div>
+<script text="text/javascript">
+	function hoverOnThis(parm) {
+		parm.style.boxShadow = "0 3px 9px 0 rgba(141,144,149,0.5)"
+		var left = parm.getElementsByClassName("big_left")[0];
+		left.style.background = "#4C96E9";
+		var day = parm.getElementsByClassName("block_date_day")[0];
+		day.style.color = "#FFF";
+		var month = parm.getElementsByClassName("block_date_month")[0];
+		month.style.color = "#FFF";
+		var detail = parm.getElementsByClassName("block_right")[0].getElementsByTagName("span")[0];
+		detail.style.textDecoration = "underline";
+	}
+	function hoverOutThis(parm) {
+		parm.style.boxShadow = "none";
+		var left = parm.getElementsByClassName("big_left")[0];
+		left.style.background = "#FFF";
+		var day = parm.getElementsByClassName("block_date_day")[0];
+		day.style.color = "#D6D6D6";
+		var month = parm.getElementsByClassName("block_date_month")[0];
+		month.style.color = "#999";
+		var detail = parm.getElementsByClassName("block_right")[0].getElementsByTagName("span")[0];
+		detail.style.textDecoration = "none";
+	}
+	function clickOnThis(parm) {
+		window.location.href = "";
+	}
+</script>
 </body>
 </html>

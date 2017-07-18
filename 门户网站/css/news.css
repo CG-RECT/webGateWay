@@ -157,16 +157,24 @@ textarea{
 	margin-right: 1%;
 }
 .article_lists .article_block{
-	width: 75%;
+	cursor: pointer;
+	width: 74%;
+	float: left;
+}
+.big_left{
+	height: 150px;
+	width: 20%;
+	margin-right: 2%;
 	float: left;
 }
 .block_left{
-	width: 15%;
+	margin-top: 28px;
+	width: 100%;
 	text-align: center;
+	border-right: 1px solid #D6D6D6;
 }
 .block_left .block_date_day{
 	display: block;
-	margin-top: 26px;
 	font-family: Helvetica;
 	font-size: 60px;
 	color: #D6D6D6;
@@ -177,9 +185,26 @@ textarea{
 	color: #999999;
 }
 .block_right{
-	width: 85%;
+	width: 77%;
+	margin-top: 28px;
 }
+.block_right h4{
+	margin-bottom: 16px;
+	font-family: PingFangSC-Regular;
+	font-size: 20px;
+	color: #000000;
+}
+.block_right span{
+	font-family: PingFangSC-Regular;
+	font-size: 16px;
+	color: #666666;
 
+ 	overflow: hidden;
+ 	text-overflow: ellipsis;
+ 	display: -webkit-box;
+ 	-webkit-line-clamp: 2;
+ 	-webkit-box-orient: vertical;
+}
 
 
 

@@ -99,11 +99,11 @@
 .img_contain a{
 	font-size: 100px;
 	text-decoration: none;
-	color: white;
+	color: rgba(220,220,220,0.1);
 	position: absolute;
 }
 .img_contain a:hover{
-	color: orange;
+	color: rgba(220,220,220,0.3);
 }
 .img_contain .moveBtn{
 	cursor: pointer;
@@ -129,7 +129,7 @@
 	height: 10px;
 	margin-left: 20px;
 	display: inline-block;
-	background-color: white;
+	background-color: rgba(255,255,255,0.3);
 	border-radius: 5px;
 	cursor: pointer;
 }
